@@ -12,11 +12,9 @@ const productRoutes = require('./routes/productRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 
 // Specify the allowed origins
-const corsOptions = {
-    origin: 'https://Ecommern.onrender.com'
-};
-
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://ecommern-3pwp.onrender.com' // Replace with the appropriate origin
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/users', userRoutes);
