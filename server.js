@@ -16,6 +16,10 @@ const imageRoutes = require('./routes/imageRoutes');
 
 
 app.use(cors());
+app.get("/",(req,res)=>{
+res.setHeader("Access-Control-Allow-Credentials","true");
+res.send("API Is running ...")
+});
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/users', userRoutes);
