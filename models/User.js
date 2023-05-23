@@ -59,7 +59,7 @@ UserSchema.methods.toJSON = function () {
 }
 
 
-//before saving => hash the password
+//before saving => hash the password (Mongoose hook)
 UserSchema.pre('save', function (next) {
 
     const user = this;
@@ -80,9 +80,7 @@ UserSchema.pre('save', function (next) {
 
 })
 
-UserSchema.pre('remove', function (next) {
-    this.model('Order').remove({ owner: this._id }, next);
-})
+
 
 
 const User = mongoose.model('User', UserSchema);
