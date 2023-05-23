@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 
 
-const User = require('./models/User');
+
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const imageRoutes = require('./routes/imageRoutes');
@@ -23,7 +23,7 @@ app.use('/products', productRoutes);
 app.use('/images', imageRoutes);
 
 
-
-server.listen(8000, () => {
-    console.log('server running at port', 8000)
+const port = process.env.PORT || 8000;
+server.listen(port, () => {
+    console.log('server running at port', port)
 })
